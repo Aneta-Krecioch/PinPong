@@ -7,6 +7,7 @@ wn.title("Pong")
 wn.bgcolor("black")
 wn.setup(width=800, height=600)
 wn.tracer(0) #stops window from updating > speed up a game
+wn.exitonclick() #don't close window after the programms end 
 
 #Paddle A
 paddle_a = turtle.Turtle()
