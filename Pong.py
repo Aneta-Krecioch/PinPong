@@ -1,6 +1,7 @@
 #Simple Pong in Python 3
 
 import turtle
+import os
 
 wn = turtle.Screen()
 wn.title("Pong")
@@ -100,10 +101,12 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *=-1 #reverse the direction
+        os.system("aplay bounce.wav&")
     
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *=-1
+        os.system("aplay bounce.wav&")
 
     if ball.xcor() > 390:
         ball.goto(0, 0)
@@ -123,8 +126,12 @@ while True:
 if ((ball.xcor() > 340 and ball.xcor() < 350) and ball.ycor() < paddle_b.ycor() + 40 and ball.ycor() > paddle_b.ycor() - 40):
     ball.setx(340)
     ball.dx *= -1
+    os.system("aplay bounce.wav&")
 
 if ((ball.xcor() < -340 and ball.xcor() > -350) and ball.ycor() < paddle_a.ycor() + 40 and ball.ycor() > paddle_a.ycor() - 40):
     ball.setx(-340)
     ball.dx *= -1
+    os.system("aplay bounce.wav&")
+
+
 
